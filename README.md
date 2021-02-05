@@ -13,6 +13,7 @@ I am not attempting to do any parallelism for now; I tried to specify the config
  
 ## Issue
 The issue I am currently getting is that the job hangs indefinitely. As seen in the log, after the task is launched, the message `Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers` begins playing continuously while parsl keeps polling (is this standard while parsl waits in queue?). If I qstat, it shows the corresponding job in Q/queue status.  
+  
 I think it's possible that this is just CRI having a lot of stuff in queue, but I have run this for several hours earlier in the week. During the same period, I was able to submit jobs with far higher resource requirements, and they ran with no issues.
   
 Various things I have tried:
