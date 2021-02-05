@@ -1,0 +1,127 @@
+2021-02-05 15:25:57.876 parsl.dataflow.dflow:82 [DEBUG]  Starting DataFlowKernel with config
+Config(
+    app_cache=True, 
+    checkpoint_files=None, 
+    checkpoint_mode=None, 
+    checkpoint_period=None, 
+    data_management_max_threads=10, 
+    executors=[HighThroughputExecutor(
+        address=None, 
+        address_probe_timeout=None, 
+        cores_per_worker=1.0, 
+        heartbeat_period=30, 
+        heartbeat_threshold=120, 
+        interchange_port_range=(55000, 56000), 
+        label='test', 
+        launch_cmd='process_worker_pool.py {debug} {max_workers} -a {addresses} -p {prefetch_capacity} -c {cores_per_worker} -m {mem_per_worker} --poll {poll_period} --task_port={task_port} --result_port={result_port} --logdir={logdir} --block_id={{block_id}} --hb_period={heartbeat_period} {address_probe_timeout_string} --hb_threshold={heartbeat_threshold} ', 
+        managed=True, 
+        max_workers=inf, 
+        mem_per_worker=None, 
+        poll_period=10, 
+        prefetch_capacity=0, 
+        provider=TorqueProvider(
+            account='mfknie', 
+            channel=LocalChannel(
+                envs={}, 
+                script_dir=None, 
+                userhome='/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl'
+            ), 
+            cmd_timeout=120, 
+            init_blocks=1, 
+            launcher=AprunLauncher(overrides=''), 
+            max_blocks=1, 
+            min_blocks=1, 
+            nodes_per_block=1, 
+            parallelism=1, 
+            queue=None, 
+            scheduler_options='#PBS -l mem=8gb -l nodes=1:ppn=2 -N test', 
+            walltime='10:00:00', 
+            worker_init='module load gcc/6.2.0\nmodule load pigz'
+        ), 
+        storage_access=None, 
+        worker_debug=False, 
+        worker_logdir_root=None, 
+        worker_port_range=(54000, 55000), 
+        worker_ports=None, 
+        working_dir=None
+    )], 
+    initialize_logging=True, 
+    max_idletime=120.0, 
+    monitoring=None, 
+    retries=0, 
+    run_dir='runinfo', 
+    strategy='simple', 
+    usage_tracking=False
+)
+2021-02-05 15:25:57.877 parsl.dataflow.dflow:87 [INFO]  Parsl version: 1.0.0
+2021-02-05 15:25:57.878 parsl.dataflow.usage_tracking.usage:126 [DEBUG]  Tracking status: False
+2021-02-05 15:25:57.878 parsl.dataflow.dflow:114 [INFO]  Run id is: d9ca22c0-c7c8-4475-9a54-0aec36f23c5b
+2021-02-05 15:25:58.221 parsl.dataflow.memoization:128 [INFO]  App caching initialized
+2021-02-05 15:25:58.221 parsl.dataflow.strategy:128 [DEBUG]  Scaling strategy: simple
+2021-02-05 15:25:58.227 parsl.executors.high_throughput.executor:457 [DEBUG]  Starting queue management thread
+2021-02-05 15:25:58.228 parsl.executors.high_throughput.executor:341 [DEBUG]  [MTHREAD] queue management worker starting
+2021-02-05 15:25:58.228 parsl.executors.high_throughput.executor:461 [DEBUG]  Started queue management thread
+2021-02-05 15:25:58.251 parsl.executors.high_throughput.executor:304 [DEBUG]  Created management thread: <Thread(HTEX-Queue-Management-Thread, started daemon 140716953040640)>
+2021-02-05 15:25:58.252 parsl.executors.high_throughput.executor:280 [DEBUG]  Launch command: process_worker_pool.py   -a cri16in001,10.50.178.250,128.135.245.36,10.50.84.250,127.0.0.1,10.50.86.250 -p 0 -c 1.0 -m None --poll 10 --task_port=54942 --result_port=54415 --logdir=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/runinfo/000/test --block_id={block_id} --hb_period=30  --hb_threshold=120 
+2021-02-05 15:25:58.252 parsl.executors.high_throughput.executor:283 [DEBUG]  Starting HighThroughputExecutor with provider:
+TorqueProvider(
+    account='mfknie', 
+    channel=LocalChannel(
+        envs={}, 
+        script_dir='/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/runinfo/000/submit_scripts', 
+        userhome='/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl'
+    ), 
+    cmd_timeout=120, 
+    init_blocks=1, 
+    launcher=AprunLauncher(overrides=''), 
+    max_blocks=1, 
+    min_blocks=1, 
+    nodes_per_block=1, 
+    parallelism=1, 
+    queue=None, 
+    scheduler_options='#PBS -l mem=8gb -l nodes=1:ppn=2 -N test', 
+    walltime='10:00:00', 
+    worker_init='module load gcc/6.2.0\nmodule load pigz'
+)
+2021-02-05 15:25:58.256 parsl.providers.torque.torque:178 [DEBUG]  Requesting nodes_per_block:1 tasks_per_node:1
+2021-02-05 15:25:58.256 parsl.providers.torque.torque:197 [DEBUG]  Writing submit script
+2021-02-05 15:25:58.335 parsl.executors.high_throughput.executor:581 [DEBUG]  Launched block 0->27650343.cri16sc001
+2021-02-05 15:25:58.392 parsl.dataflow.task_status_poller:74 [DEBUG]  Adding executor test
+2021-02-05 15:25:58.394 parsl.data_provider.files:54 [DEBUG]  Making clean copy of File object <<class 'parsl.data_provider.files.File'> at 0x7ffb4d4a8f50 url=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/hw.txt scheme=file netloc= path=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/hw.txt filename=hw.txt>
+2021-02-05 15:25:58.404 parsl.data_provider.data_manager:128 [DEBUG]  stage_in checking Staging provider NoOpFileStaging()
+2021-02-05 15:25:58.404 parsl.data_provider.file_noop:13 [DEBUG]  NoOpFileStaging checking file <<class 'parsl.data_provider.files.File'> at 0x7ffb4ce16790 url=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/hw.txt scheme=file netloc= path=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/hw.txt filename=hw.txt>
+2021-02-05 15:25:58.404 parsl.data_provider.data_manager:87 [DEBUG]  stage_in checking Staging provider NoOpFileStaging()
+2021-02-05 15:25:58.404 parsl.data_provider.file_noop:13 [DEBUG]  NoOpFileStaging checking file <<class 'parsl.data_provider.files.File'> at 0x7ffb4ce16790 url=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/hw.txt scheme=file netloc= path=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/hw.txt filename=hw.txt>
+2021-02-05 15:25:58.405 parsl.dataflow.dflow:533 [DEBUG]  Adding output dependencies
+2021-02-05 15:25:58.405 parsl.data_provider.files:54 [DEBUG]  Making clean copy of File object <<class 'parsl.data_provider.files.File'> at 0x7ffb4d515210 url=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/test.txt scheme=file netloc= path=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/test.txt filename=test.txt>
+2021-02-05 15:25:58.405 parsl.dataflow.dflow:547 [DEBUG]  Submitting stage out for output file <<class 'parsl.data_provider.files.File'> at 0x7ffb4d515210 url=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/test.txt scheme=file netloc= path=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/test.txt filename=test.txt>
+2021-02-05 15:25:58.405 parsl.data_provider.data_manager:160 [DEBUG]  stage_out checking Staging provider NoOpFileStaging()
+2021-02-05 15:25:58.405 parsl.data_provider.file_noop:17 [DEBUG]  NoOpFileStaging checking file <<class 'parsl.data_provider.files.File'> at 0x7ffb4ce08f90 url=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/test.txt scheme=file netloc= path=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/test.txt filename=test.txt>
+2021-02-05 15:25:58.405 parsl.dataflow.dflow:553 [DEBUG]  No stageout dependency for <<class 'parsl.data_provider.files.File'> at 0x7ffb4d515210 url=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/test.txt scheme=file netloc= path=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/test.txt filename=test.txt>
+2021-02-05 15:25:58.406 parsl.app.futures:71 [DEBUG]  Creating DataFuture with parent: <AppFuture super=<AppFuture at 0x7ffb4ce16510 state=pending>> and file: <<class 'parsl.data_provider.files.File'> at 0x7ffb4d515210 url=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/test.txt scheme=file netloc= path=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/test.txt filename=test.txt>
+2021-02-05 15:25:58.406 parsl.data_provider.data_manager:46 [DEBUG]  stage_out checking Staging provider NoOpFileStaging()
+2021-02-05 15:25:58.406 parsl.data_provider.file_noop:17 [DEBUG]  NoOpFileStaging checking file <<class 'parsl.data_provider.files.File'> at 0x7ffb4ce08f90 url=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/test.txt scheme=file netloc= path=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/test.txt filename=test.txt>
+2021-02-05 15:25:58.406 parsl.dataflow.dflow:774 [INFO]  Task 0 submitted for App write_hello, not waiting on any dependency
+2021-02-05 15:25:58.406 parsl.dataflow.dflow:780 [DEBUG]  Task 0 set to pending state with AppFuture: <AppFuture super=<AppFuture at 0x7ffb4ce16510 state=pending>>
+2021-02-05 15:25:58.406 parsl.dataflow.memoization:196 [DEBUG]  Task 0 will not be memoized
+2021-02-05 15:25:58.407 parsl.executors.high_throughput.executor:546 [DEBUG]  Pushing function <function write_hello at 0x7ffb4d512830> to queue with args (<function write_hello at 0x7ffb50f03e60>,)
+2021-02-05 15:25:59.222 parsl.dataflow.task_status_poller:62 [DEBUG]  Polling
+2021-02-05 15:25:59.222 parsl.dataflow.task_status_poller:26 [DEBUG]  Polling test
+2021-02-05 15:25:59.329 parsl.providers.torque.torque:129 [DEBUG]  coerced job_id 27650343.cri16sc001 -> 27650343.cri16sc001
+2021-02-05 15:25:59.331 parsl.dataflow.strategy:205 [DEBUG]  Executor test has 0 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-05 15:26:00.892 parsl.dataflow.dflow:500 [INFO]  Task 0 launched on executor test
+2021-02-05 15:26:04.222 parsl.dataflow.task_status_poller:62 [DEBUG]  Polling
+2021-02-05 15:26:04.224 parsl.dataflow.strategy:205 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-05 15:26:09.222 parsl.dataflow.task_status_poller:62 [DEBUG]  Polling
+2021-02-05 15:26:09.224 parsl.dataflow.strategy:205 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-05 15:26:14.222 parsl.dataflow.task_status_poller:62 [DEBUG]  Polling
+2021-02-05 15:26:14.224 parsl.dataflow.strategy:205 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-05 15:26:16.075 parsl.dataflow.dflow:913 [INFO]  DFK cleanup initiated
+2021-02-05 15:26:16.076 parsl.dataflow.dflow:816 [INFO]  Summary of tasks in DFK:
+2021-02-05 15:26:16.076 parsl.dataflow.dflow:829 [INFO]  Tasks in state States.launched: 1
+2021-02-05 15:26:16.076 parsl.dataflow.dflow:835 [INFO]  End of summary
+2021-02-05 15:26:16.076 parsl.dataflow.dflow:937 [INFO]  Terminating flow_control and strategy threads
+2021-02-05 15:26:16.125 parsl.executors.high_throughput.executor:642 [INFO]  Attempting HighThroughputExecutor shutdown
+2021-02-05 15:26:16.125 parsl.executors.high_throughput.executor:644 [INFO]  Finished HighThroughputExecutor shutdown attempt
+2021-02-05 15:26:16.125 parsl.executors.threads:105 [DEBUG]  Done with executor shutdown
+2021-02-05 15:26:16.126 parsl.dataflow.dflow:960 [INFO]  DFK cleanup complete

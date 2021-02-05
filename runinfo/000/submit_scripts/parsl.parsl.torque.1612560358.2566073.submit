@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#PBS -l mem=8gb -l nodes=1:ppn=2 -N test
+#PBS -S /bin/bash
+#PBS -N parsl.parsl.torque.1612560358.2566073
+#PBS -m n
+#PBS -l walltime=10:00:00
+#PBS -l nodes=1:ppn=1
+#PBS -o /gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/runinfo/000/submit_scripts/parsl.parsl.torque.1612560358.2566073.submit.stdout
+#PBS -e /gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/runinfo/000/submit_scripts/parsl.parsl.torque.1612560358.2566073.submit.stderr
+
+module load gcc/6.2.0
+module load pigz
+
+export JOBNAME="parsl.parsl.torque.1612560358.2566073"
+
+set -e
+WORKERCOUNT=1
+
+cat << APRUN_EOF > cmd_$JOBNAME.sh
+process_worker_pool.py   -a cri16in001,10.50.178.250,128.135.245.36,10.50.84.250,127.0.0.1,10.50.86.250 -p 0 -c 1.0 -m None --poll 10 --task_port=54942 --result_port=54415 --logdir=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/runinfo/000/test --block_id=0 --hb_period=30  --hb_threshold=120 
+APRUN_EOF
+chmod a+x cmd_$JOBNAME.sh
+
+aprun -n 1 -N 1  /bin/bash cmd_$JOBNAME.sh &
+wait
+
+echo "Done"
+
+
