@@ -2,13 +2,16 @@ from parsl.providers import TorqueProvider
 from parsl.channels import LocalChannel
 from parsl.config import Config
 from parsl.executors import HighThroughputExecutor
+from parsl.launchers import SingleNodeLauncher
 
 config = Config(
     executors = [
         HighThroughputExecutor(
             label = "test",
-            # max_workers = 4,
+            max_workers = 1,
+            
             provider = TorqueProvider(
+                launcher=SingleNodeLauncher(),
                 account = "mfknie",
                 walltime = "10:00:00",
                 scheduler_options="#PBS -l mem=8gb -l nodes=1:ppn=2 -N test",

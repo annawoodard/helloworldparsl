@@ -1,0 +1,64 @@
+#!/bin/bash
+
+#PBS -l mem=8gb -l nodes=1:ppn=2 -N test
+#PBS -S /bin/bash
+#PBS -N parsl.parsl.torque.1612561375.7104862
+#PBS -m n
+#PBS -l walltime=10:00:00
+#PBS -l nodes=1:ppn=1
+#PBS -o /gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/runinfo/000/submit_scripts/parsl.parsl.torque.1612561375.7104862.submit.stdout
+#PBS -e /gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/runinfo/000/submit_scripts/parsl.parsl.torque.1612561375.7104862.submit.stderr
+
+module load gcc/6.2.0
+module load pigz
+
+export JOBNAME="parsl.parsl.torque.1612561375.7104862"
+
+set -e
+export CORES=$(getconf _NPROCESSORS_ONLN)
+echo "Found cores : $CORES"
+WORKERCOUNT=1
+FAILONANY=0
+RET=0
+
+declare -a EXITCODES
+
+FAILONANY() {
+    for I in $(seq 1 1 $WORKERCOUNT); do
+        if [ "$EXITCODES[$I]" != "0" ]; then
+            RET=1
+            break
+        fi
+    done
+}
+
+FAILONALL() {
+    RET=1
+    for I in $(seq 1 1 $WORKERCOUNT); do
+        if [ "$EXITCODES[$I]" == "0" ]; then
+            RET=0
+            break
+        fi
+    done
+}
+
+CMD() {
+process_worker_pool.py  --max_workers=1 -a 10.50.86.250,127.0.0.1,128.135.245.36,cri16in001,10.50.178.250,10.50.84.250 -p 0 -c 1.0 -m None --poll 10 --task_port=54526 --result_port=54911 --logdir=/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl/runinfo/000/test --block_id=0 --hb_period=30  --hb_threshold=120 
+EXITCODES[$1]=$?
+}
+for COUNT in $(seq 1 1 $WORKERCOUNT); do
+    echo "Launching worker: $COUNT"
+    CMD $COUNT &
+done
+
+wait
+
+if [ "$FAILONANY" == "1" ]; then
+    FAILONANY
+else
+    FAILONALL
+fi
+echo "All workers done"
+exit $RET
+
+

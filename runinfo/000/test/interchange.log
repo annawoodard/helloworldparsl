@@ -1,6 +1,6 @@
-2021-02-05 15:25:58.245 interchange:166 [INFO]  Attempting connection to client at 127.0.0.1 on ports: 55588,55246,55022
-2021-02-05 15:25:58.248 interchange:179 [INFO]  Connected to client
-2021-02-05 15:25:58.249 interchange:215 [INFO]  Bound to ports 54942,54415 for incoming worker connections
-2021-02-05 15:25:58.249 interchange:229 [INFO]  Platform info: {'parsl_v': '1.0.0', 'python_v': '3.7.6', 'os': 'Linux', 'hostname': 'cri16in001', 'dir': '/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl'}
-2021-02-05 15:25:58.250 interchange:347 [INFO]  Incoming ports bound
-2021-02-05 15:25:58.250 interchange:264 [INFO]  [TASK_PULL_THREAD] Starting
+2021-02-05 15:42:55.693 interchange:166 [INFO]  Attempting connection to client at 127.0.0.1 on ports: 55250,55895,55816
+2021-02-05 15:42:55.695 interchange:179 [INFO]  Connected to client
+2021-02-05 15:42:55.695 interchange:215 [INFO]  Bound to ports 54526,54911 for incoming worker connections
+2021-02-05 15:42:55.696 interchange:229 [INFO]  Platform info: {'parsl_v': '1.0.0', 'python_v': '3.7.6', 'os': 'Linux', 'hostname': 'cri16in001', 'dir': '/gpfs/data/gao-lab/Mark/other_code/testing/parsl/helloworldparsl'}
+2021-02-05 15:42:55.696 interchange:347 [INFO]  Incoming ports bound
+2021-02-05 15:42:55.698 interchange:264 [INFO]  [TASK_PULL_THREAD] Starting
