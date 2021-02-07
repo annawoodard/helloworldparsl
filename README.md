@@ -1,3 +1,29 @@
+# Install
+```
+module load gcc/6.2.0
+module load miniconda3/4.7.10
+
+conda create --name prs python=3.7
+# not sure why conda activate doesn't work, even after 'conda init'ing-- something weird at CRI
+source activate prs
+
+# probably unnecessary but I prefer to run with latest as there are frequent bug fixes
+git clone https://github.com/Parsl/parsl.git
+cd parsl
+conda install pip
+pip install .
+```
+
+# Run
+(From a head node)
+```
+module load gcc/6.2.0
+module load miniconda3/4.7.10
+source activate prs
+
+python test_parsl.py
+```
+
 # helloworldparsl
 Parsl example. Run on CRI.
 
