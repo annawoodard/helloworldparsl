@@ -1,0 +1,11 @@
+2021-02-07 13:11:55.574 interchange:167 [INFO]  Attempting connection to client at 127.0.0.1 on ports: 55093,55357,55916
+2021-02-07 13:11:55.577 interchange:180 [INFO]  Connected to client
+2021-02-07 13:11:55.578 interchange:211 [INFO]  Bound to ports 54406,54421 for incoming worker connections
+2021-02-07 13:11:55.578 interchange:225 [INFO]  Platform info: {'parsl_v': '1.0.0', 'python_v': '3.7.9', 'os': 'Linux', 'hostname': 'cri16in001', 'dir': '/home/t.cri.awoodard/helloworldparsl'}
+2021-02-07 13:11:55.578 interchange:373 [INFO]  Incoming ports bound
+2021-02-07 13:11:55.580 interchange:261 [INFO]  [TASK_PULL_THREAD] Starting
+2021-02-07 13:13:25.918 interchange:437 [INFO]  [MAIN] Adding manager: b'2d5bd9eeaae8' to ready queue
+2021-02-07 13:13:25.919 interchange:439 [INFO]  [MAIN] Registration info for manager b'2d5bd9eeaae8': {'parsl_v': '1.0.0', 'python_v': '3.7.9', 'worker_count': 1, 'uid': '2d5bd9eeaae8', 'block_id': '0', 'prefetch_capacity': 0, 'max_capacity': 1, 'os': 'Linux', 'hostname': 'cri16cn053', 'dir': '/home/t.cri.awoodard', 'cpu_count': 28, 'total_memory': 135210475520, 'reg_time': datetime.datetime(2021, 2, 7, 13, 13, 25)}
+2021-02-07 13:13:25.919 interchange:457 [INFO]  [MAIN] Manager b'2d5bd9eeaae8' has compatible Parsl version 1.0.0
+2021-02-07 13:13:25.919 interchange:459 [INFO]  [MAIN] Manager b'2d5bd9eeaae8' has compatible Python version 3.7
+2021-02-07 13:13:26.193 interchange:342 [INFO]  [CMD] Received HOLD_WORKER for b'2d5bd9eeaae8'

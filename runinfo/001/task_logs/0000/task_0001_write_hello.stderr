@@ -1,0 +1,3 @@
+--> executable follows <--
+cat /home/t.cri.awoodard/helloworldparsl/hw.txt > /home/t.cri.awoodard/helloworldparsl/test.txt
+--> end executable <--

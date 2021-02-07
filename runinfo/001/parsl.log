@@ -1,0 +1,176 @@
+2021-02-07 13:11:55.465 parsl.dataflow.dflow:84 [DEBUG]  Starting DataFlowKernel with config
+Config(
+    app_cache=True, 
+    checkpoint_files=None, 
+    checkpoint_mode=None, 
+    checkpoint_period=None, 
+    executors=[HighThroughputExecutor(
+        address=None, 
+        address_probe_timeout=None, 
+        cores_per_worker=1.0, 
+        cpu_affinity='none', 
+        heartbeat_period=30, 
+        heartbeat_threshold=120, 
+        interchange_port_range=(55000, 56000), 
+        label='test', 
+        launch_cmd='process_worker_pool.py {debug} {max_workers} -a {addresses} -p {prefetch_capacity} -c {cores_per_worker} -m {mem_per_worker} --poll {poll_period} --task_port={task_port} --result_port={result_port} --logdir={logdir} --block_id={{block_id}} --hb_period={heartbeat_period} {address_probe_timeout_string} --hb_threshold={heartbeat_threshold} --cpu-affinity {cpu_affinity} ', 
+        managed=True, 
+        max_workers=1, 
+        mem_per_worker=None, 
+        poll_period=10, 
+        prefetch_capacity=0, 
+        provider=TorqueProvider(
+            account=None, 
+            channel=LocalChannel(
+                envs={}, 
+                script_dir=None, 
+                userhome='/home/t.cri.awoodard/helloworldparsl'
+            ), 
+            cmd_timeout=120, 
+            init_blocks=1, 
+            launcher=SingleNodeLauncher(debug=True, fail_on_any=False), 
+            max_blocks=1, 
+            min_blocks=1, 
+            nodes_per_block=1, 
+            parallelism=1, 
+            queue=None, 
+            scheduler_options='#PBS -l mem=4gb -l nodes=1:ppn=2 -N test', 
+            walltime='10:00:00', 
+            worker_init='module load gcc/6.2.0\nmodule load miniconda3/4.7.10\nmodule load pigz\nsource activate prs'
+        ), 
+        storage_access=None, 
+        worker_debug=False, 
+        worker_logdir_root=None, 
+        worker_port_range=(54000, 55000), 
+        worker_ports=None, 
+        working_dir=None
+    )], 
+    garbage_collect=True, 
+    initialize_logging=True, 
+    internal_tasks_max_threads=10, 
+    max_idletime=120.0, 
+    monitoring=None, 
+    retries=0, 
+    run_dir='runinfo', 
+    strategy='simple', 
+    usage_tracking=False
+)
+2021-02-07 13:11:55.466 parsl.dataflow.dflow:86 [INFO]  Parsl version: 1.0.0
+2021-02-07 13:11:55.466 parsl.dataflow.usage_tracking.usage:126 [DEBUG]  Tracking status: False
+2021-02-07 13:11:55.467 parsl.dataflow.dflow:114 [INFO]  Run id is: 5cf6d264-2124-4bdc-9e15-24a2c09d2933
+2021-02-07 13:11:55.560 parsl.dataflow.memoization:164 [INFO]  App caching initialized
+2021-02-07 13:11:55.560 parsl.dataflow.strategy:127 [DEBUG]  Scaling strategy: simple
+2021-02-07 13:11:55.564 parsl.executors.high_throughput.executor:473 [DEBUG]  Starting queue management thread
+2021-02-07 13:11:55.564 parsl.executors.high_throughput.executor:357 [DEBUG]  [MTHREAD] queue management worker starting
+2021-02-07 13:11:55.564 parsl.executors.high_throughput.executor:477 [DEBUG]  Started queue management thread
+2021-02-07 13:11:55.580 parsl.executors.high_throughput.executor:318 [DEBUG]  Created management thread: <Thread(HTEX-Queue-Management-Thread, started daemon 139746414159616)>
+2021-02-07 13:11:55.581 parsl.executors.high_throughput.executor:290 [DEBUG]  Launch command: process_worker_pool.py  --max_workers=1 -a 127.0.0.1,cri16in001,10.50.84.250,128.135.245.36,10.50.178.250,10.50.86.250 -p 0 -c 1.0 -m None --poll 10 --task_port=54406 --result_port=54421 --logdir=/home/t.cri.awoodard/helloworldparsl/runinfo/001/test --block_id={block_id} --hb_period=30  --hb_threshold=120 --cpu-affinity none 
+2021-02-07 13:11:55.581 parsl.executors.high_throughput.executor:293 [DEBUG]  Starting HighThroughputExecutor with provider:
+TorqueProvider(
+    account=None, 
+    channel=LocalChannel(
+        envs={}, 
+        script_dir='/home/t.cri.awoodard/helloworldparsl/runinfo/001/submit_scripts', 
+        userhome='/home/t.cri.awoodard/helloworldparsl'
+    ), 
+    cmd_timeout=120, 
+    init_blocks=1, 
+    launcher=SingleNodeLauncher(debug=True, fail_on_any=False), 
+    max_blocks=1, 
+    min_blocks=1, 
+    nodes_per_block=1, 
+    parallelism=1, 
+    queue=None, 
+    scheduler_options='#PBS -l mem=4gb -l nodes=1:ppn=2 -N test', 
+    walltime='10:00:00', 
+    worker_init='module load gcc/6.2.0\nmodule load miniconda3/4.7.10\nmodule load pigz\nsource activate prs'
+)
+2021-02-07 13:11:55.585 parsl.providers.torque.torque:173 [DEBUG]  Requesting nodes_per_block:1 tasks_per_node:1
+2021-02-07 13:11:55.586 parsl.providers.torque.torque:192 [DEBUG]  Writing submit script
+2021-02-07 13:11:55.711 parsl.executors.high_throughput.executor:624 [DEBUG]  Launched block 0->27653635.cri16sc001
+2021-02-07 13:11:55.713 parsl.dataflow.task_status_poller:114 [DEBUG]  Adding executor test
+2021-02-07 13:11:55.714 parsl.dataflow.dflow:795 [DEBUG]  Task 0 will be sent to executor test
+2021-02-07 13:11:55.714 parsl.dataflow.dflow:624 [DEBUG]  Adding output dependencies
+2021-02-07 13:11:55.714 parsl.dataflow.dflow:876 [INFO]  Task 0 submitted for App cwd, not waiting on any dependency
+2021-02-07 13:11:55.715 parsl.dataflow.dflow:882 [DEBUG]  Task 0 set to pending state with AppFuture: <AppFuture super=<AppFuture at 0x7f19504eefd0 state=pending>>
+2021-02-07 13:11:55.715 parsl.dataflow.memoization:229 [DEBUG]  Task 0 will not be memoized
+2021-02-07 13:11:55.715 parsl.executors.high_throughput.executor:562 [DEBUG]  Pushing function <function cwd at 0x7f19504cb3b0> to queue with args ()
+2021-02-07 13:11:55.718 parsl.dataflow.dflow:587 [INFO]  Task 0 launched on executor test
+2021-02-07 13:11:56.602 parsl.providers.torque.torque:128 [DEBUG]  coerced job_id 27653635.cri16sc001 -> 27653635.cri16sc001
+2021-02-07 13:11:56.603 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:12:01.562 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:12:06.562 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:12:11.562 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:12:16.562 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:12:21.562 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:12:26.562 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:12:31.562 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:12:36.562 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:12:41.563 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:12:46.563 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:12:51.563 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:12:56.604 parsl.providers.torque.torque:128 [DEBUG]  coerced job_id 27653635.cri16sc001 -> 27653635.cri16sc001
+2021-02-07 13:12:56.606 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:13:01.563 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:13:06.563 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:13:11.563 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:13:16.564 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:13:21.564 parsl.dataflow.strategy:211 [DEBUG]  Executor test has 1 active tasks, 0/1 running/pending blocks, and 0 connected workers
+2021-02-07 13:13:25.930 parsl.dataflow.dflow:431 [INFO]  Task 0 completed (launched -> exec_done)
+2021-02-07 13:13:25.932 parsl.dataflow.dflow:795 [DEBUG]  Task 1 will be sent to executor test
+2021-02-07 13:13:25.933 parsl.data_provider.files:54 [DEBUG]  Making clean copy of File object <<class 'parsl.data_provider.files.File'> at 0x7f194fe1bf90 url=/home/t.cri.awoodard/helloworldparsl/hw.txt scheme=file netloc= path=/home/t.cri.awoodard/helloworldparsl/hw.txt filename=hw.txt>
+2021-02-07 13:13:25.942 parsl.data_provider.data_manager:128 [DEBUG]  stage_in checking Staging provider NoOpFileStaging()
+2021-02-07 13:13:25.942 parsl.data_provider.file_noop:13 [DEBUG]  NoOpFileStaging checking file <<class 'parsl.data_provider.files.File'> at 0x7f194fe2bf50 url=/home/t.cri.awoodard/helloworldparsl/hw.txt scheme=file netloc= path=/home/t.cri.awoodard/helloworldparsl/hw.txt filename=hw.txt>
+2021-02-07 13:13:25.943 parsl.data_provider.data_manager:87 [DEBUG]  stage_in checking Staging provider NoOpFileStaging()
+2021-02-07 13:13:25.943 parsl.data_provider.file_noop:13 [DEBUG]  NoOpFileStaging checking file <<class 'parsl.data_provider.files.File'> at 0x7f194fe2bf50 url=/home/t.cri.awoodard/helloworldparsl/hw.txt scheme=file netloc= path=/home/t.cri.awoodard/helloworldparsl/hw.txt filename=hw.txt>
+2021-02-07 13:13:25.943 parsl.dataflow.dflow:624 [DEBUG]  Adding output dependencies
+2021-02-07 13:13:25.943 parsl.data_provider.files:54 [DEBUG]  Making clean copy of File object <<class 'parsl.data_provider.files.File'> at 0x7f194fe0acd0 url=/home/t.cri.awoodard/helloworldparsl/test.txt scheme=file netloc= path=/home/t.cri.awoodard/helloworldparsl/test.txt filename=test.txt>
+2021-02-07 13:13:25.943 parsl.dataflow.dflow:638 [DEBUG]  Submitting stage out for output file <<class 'parsl.data_provider.files.File'> at 0x7f194fe0acd0 url=/home/t.cri.awoodard/helloworldparsl/test.txt scheme=file netloc= path=/home/t.cri.awoodard/helloworldparsl/test.txt filename=test.txt>
+2021-02-07 13:13:25.944 parsl.data_provider.data_manager:160 [DEBUG]  stage_out checking Staging provider NoOpFileStaging()
+2021-02-07 13:13:25.944 parsl.data_provider.file_noop:17 [DEBUG]  NoOpFileStaging checking file <<class 'parsl.data_provider.files.File'> at 0x7f19504c49d0 url=/home/t.cri.awoodard/helloworldparsl/test.txt scheme=file netloc= path=/home/t.cri.awoodard/helloworldparsl/test.txt filename=test.txt>
+2021-02-07 13:13:25.944 parsl.dataflow.dflow:644 [DEBUG]  No stageout dependency for <<class 'parsl.data_provider.files.File'> at 0x7f194fe0acd0 url=/home/t.cri.awoodard/helloworldparsl/test.txt scheme=file netloc= path=/home/t.cri.awoodard/helloworldparsl/test.txt filename=test.txt>
+2021-02-07 13:13:25.944 parsl.app.futures:70 [DEBUG]  Creating DataFuture with parent: <AppFuture super=<AppFuture at 0x7f194fe2b110 state=pending>> and file: <<class 'parsl.data_provider.files.File'> at 0x7f194fe0acd0 url=/home/t.cri.awoodard/helloworldparsl/test.txt scheme=file netloc= path=/home/t.cri.awoodard/helloworldparsl/test.txt filename=test.txt>
+2021-02-07 13:13:25.945 parsl.data_provider.data_manager:46 [DEBUG]  stage_out checking Staging provider NoOpFileStaging()
+2021-02-07 13:13:25.945 parsl.data_provider.file_noop:17 [DEBUG]  NoOpFileStaging checking file <<class 'parsl.data_provider.files.File'> at 0x7f19504c49d0 url=/home/t.cri.awoodard/helloworldparsl/test.txt scheme=file netloc= path=/home/t.cri.awoodard/helloworldparsl/test.txt filename=test.txt>
+2021-02-07 13:13:25.945 parsl.dataflow.dflow:876 [INFO]  Task 1 submitted for App write_hello, not waiting on any dependency
+2021-02-07 13:13:25.945 parsl.dataflow.dflow:882 [DEBUG]  Task 1 set to pending state with AppFuture: <AppFuture super=<AppFuture at 0x7f194fe2b110 state=pending>>
+2021-02-07 13:13:25.945 parsl.dataflow.memoization:229 [DEBUG]  Task 1 will not be memoized
+2021-02-07 13:13:25.945 parsl.executors.high_throughput.executor:562 [DEBUG]  Pushing function <function wrap_error.<locals>.wrapper at 0x7f194fe3d200> to queue with args ()
+2021-02-07 13:13:25.947 parsl.dataflow.dflow:587 [INFO]  Task 1 launched on executor test
+2021-02-07 13:13:25.948 parsl.dataflow.dflow:1244 [INFO]  Standard output for task 1 available at /home/t.cri.awoodard/helloworldparsl/runinfo/001/task_logs/0000/task_0001_write_hello.stdout
+2021-02-07 13:13:25.948 parsl.dataflow.dflow:1246 [INFO]  Standard error for task 1 available at /home/t.cri.awoodard/helloworldparsl/runinfo/001/task_logs/0000/task_0001_write_hello.stderr
+2021-02-07 13:13:26.057 parsl.dataflow.dflow:431 [INFO]  Task 1 completed (launched -> exec_done)
+2021-02-07 13:13:26.057 parsl.dataflow.dflow:1244 [INFO]  Standard output for task 1 available at /home/t.cri.awoodard/helloworldparsl/runinfo/001/task_logs/0000/task_0001_write_hello.stdout
+2021-02-07 13:13:26.057 parsl.dataflow.dflow:1246 [INFO]  Standard error for task 1 available at /home/t.cri.awoodard/helloworldparsl/runinfo/001/task_logs/0000/task_0001_write_hello.stderr
+2021-02-07 13:13:26.060 parsl.dataflow.dflow:795 [DEBUG]  Task 2 will be sent to executor test
+2021-02-07 13:13:26.060 parsl.data_provider.files:54 [DEBUG]  Making clean copy of File object <<class 'parsl.data_provider.files.File'> at 0x7f194fe0acd0 url=/home/t.cri.awoodard/helloworldparsl/test.txt scheme=file netloc= path=/home/t.cri.awoodard/helloworldparsl/test.txt filename=test.txt>
+2021-02-07 13:13:26.061 parsl.app.futures:70 [DEBUG]  Creating DataFuture with parent: <DataFuture at 0x7f194c1ae910 state=finished with file <<class 'parsl.data_provider.files.File'> at 0x7f194fe0acd0 url=/home/t.cri.awoodard/helloworldparsl/test.txt scheme=file netloc= path=/home/t.cri.awoodard/helloworldparsl/test.txt filename=test.txt>> and file: <<class 'parsl.data_provider.files.File'> at 0x7f194c1b4690 url=/home/t.cri.awoodard/helloworldparsl/test.txt scheme=file netloc= path=/home/t.cri.awoodard/helloworldparsl/test.txt filename=test.txt>
+2021-02-07 13:13:26.061 parsl.data_provider.data_manager:128 [DEBUG]  stage_in checking Staging provider NoOpFileStaging()
+2021-02-07 13:13:26.062 parsl.data_provider.file_noop:13 [DEBUG]  NoOpFileStaging checking file <<class 'parsl.data_provider.files.File'> at 0x7f194c1b4690 url=/home/t.cri.awoodard/helloworldparsl/test.txt scheme=file netloc= path=/home/t.cri.awoodard/helloworldparsl/test.txt filename=test.txt>
+2021-02-07 13:13:26.062 parsl.data_provider.data_manager:87 [DEBUG]  stage_in checking Staging provider NoOpFileStaging()
+2021-02-07 13:13:26.063 parsl.data_provider.file_noop:13 [DEBUG]  NoOpFileStaging checking file <<class 'parsl.data_provider.files.File'> at 0x7f194c1b4690 url=/home/t.cri.awoodard/helloworldparsl/test.txt scheme=file netloc= path=/home/t.cri.awoodard/helloworldparsl/test.txt filename=test.txt>
+2021-02-07 13:13:26.063 parsl.dataflow.dflow:624 [DEBUG]  Adding output dependencies
+2021-02-07 13:13:26.063 parsl.dataflow.dflow:876 [INFO]  Task 2 submitted for App compress, waiting on task 1
+2021-02-07 13:13:26.063 parsl.dataflow.dflow:882 [DEBUG]  Task 2 set to pending state with AppFuture: <AppFuture super=<AppFuture at 0x7f194c1b4450 state=pending>>
+2021-02-07 13:13:26.063 parsl.dataflow.memoization:229 [DEBUG]  Task 2 will not be memoized
+2021-02-07 13:13:26.064 parsl.executors.high_throughput.executor:562 [DEBUG]  Pushing function <function wrap_error.<locals>.wrapper at 0x7f19504d7b00> to queue with args ()
+2021-02-07 13:13:26.067 parsl.dataflow.dflow:587 [INFO]  Task 2 launched on executor test
+2021-02-07 13:13:26.067 parsl.dataflow.dflow:1244 [INFO]  Standard output for task 2 available at /home/t.cri.awoodard/helloworldparsl/runinfo/001/task_logs/0000/task_0002_compress.stdout
+2021-02-07 13:13:26.068 parsl.dataflow.dflow:1246 [INFO]  Standard error for task 2 available at /home/t.cri.awoodard/helloworldparsl/runinfo/001/task_logs/0000/task_0002_compress.stderr
+2021-02-07 13:13:26.068 parsl.dataflow.dflow:1004 [INFO]  Waiting for all remaining tasks to complete
+2021-02-07 13:13:26.190 parsl.dataflow.dflow:431 [INFO]  Task 2 completed (launched -> exec_done)
+2021-02-07 13:13:26.190 parsl.dataflow.dflow:1244 [INFO]  Standard output for task 2 available at /home/t.cri.awoodard/helloworldparsl/runinfo/001/task_logs/0000/task_0002_compress.stdout
+2021-02-07 13:13:26.190 parsl.dataflow.dflow:1019 [INFO]  All remaining tasks completed
+2021-02-07 13:13:26.190 parsl.dataflow.dflow:1246 [INFO]  Standard error for task 2 available at /home/t.cri.awoodard/helloworldparsl/runinfo/001/task_logs/0000/task_0002_compress.stderr
+2021-02-07 13:13:26.191 parsl.dataflow.dflow:1030 [INFO]  DFK cleanup initiated
+2021-02-07 13:13:26.191 parsl.dataflow.dflow:920 [INFO]  Summary of tasks in DFK:
+2021-02-07 13:13:26.191 parsl.dataflow.dflow:934 [INFO]  Tasks in state States.exec_done: 3
+2021-02-07 13:13:26.192 parsl.dataflow.dflow:940 [INFO]  End of summary
+2021-02-07 13:13:26.192 parsl.dataflow.dflow:1054 [INFO]  Terminating flow_control and strategy threads
+2021-02-07 13:13:26.193 parsl.executors.high_throughput.executor:692 [DEBUG]  Current blocks : {'0': '27653635.cri16sc001'}
+2021-02-07 13:13:26.193 parsl.executors.high_throughput.executor:526 [DEBUG]  [HOLD_BLOCK]: Sending hold to manager: 2d5bd9eeaae8
+2021-02-07 13:13:26.194 parsl.executors.high_throughput.executor:495 [DEBUG]  Sent hold request to worker: 2d5bd9eeaae8
+2021-02-07 13:13:26.320 parsl.executors.high_throughput.executor:731 [INFO]  Attempting HighThroughputExecutor shutdown
+2021-02-07 13:13:26.321 parsl.executors.high_throughput.executor:733 [INFO]  Finished HighThroughputExecutor shutdown attempt
+2021-02-07 13:13:26.321 parsl.executors.threads:105 [DEBUG]  Done with executor shutdown
+2021-02-07 13:13:26.321 parsl.dataflow.dflow:1083 [INFO]  DFK cleanup complete

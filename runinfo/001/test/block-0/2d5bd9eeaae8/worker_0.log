@@ -1,0 +1,7 @@
+2021-02-07 13:13:25.911 worker_log:502 Rank:0 [INFO]  Worker 0 started
+2021-02-07 13:13:25.921 worker_log:532 Rank:0 [INFO]  Received task 1
+2021-02-07 13:13:25.922 worker_log:550 Rank:0 [INFO]  Completed task 1
+2021-02-07 13:13:25.951 worker_log:532 Rank:0 [INFO]  Received task 2
+2021-02-07 13:13:26.050 worker_log:550 Rank:0 [INFO]  Completed task 2
+2021-02-07 13:13:26.093 worker_log:532 Rank:0 [INFO]  Received task 3
+2021-02-07 13:13:26.182 worker_log:550 Rank:0 [INFO]  Completed task 3

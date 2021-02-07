@@ -1,0 +1,20 @@
+Found cores : 28
+Launching worker: 1
+
+
+------------ Job WrapUp ------------
+
+Job ID:            27653635.cri16sc001
+User ID:           t.cri.awoodard
+Job Name:          parsl.parsl.torque.1612725115.5856829
+Queue Name:        standard
+Working Directory: /home/t.cri.awoodard/helloworldparsl
+Resource List:     mem=4gb,walltime=10:00:00,nodes=1:ppn=1,neednodes=1:ppn=1
+Resources Used:    cput=00:00:02,vmem=405328kb,walltime=00:00:12,mem=9416kb,energy_used=0
+Exit Code:         271
+Mother Superior:   cri16cn053
+
+Execution Nodes: 
+cri16cn053
+
+
